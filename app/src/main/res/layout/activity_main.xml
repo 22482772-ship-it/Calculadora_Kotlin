@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+    <!-- Pantalla de la calculadora -->
+    <TextView
+        android:id="@+id/tv_num1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:maxLines="1"
+        android:textAlignment="textEnd"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1234+" />
+
+    <TextView
+        android:id="@+id/tv_num2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:maxLines="2"
+        android:textAlignment="textEnd"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_num1"
+        tools:text="5678" />
+
+    <!-- Guía para empezar los botones -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <!-- Fila 1 -->
+    <Button
+        android:id="@+id/btnC"
+        style="@style/CalculatorButton.Clear"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="clicBorrar"
+        android:text="C"
+        app:layout_constraintBottom_toTopOf="@+id/btn7"
+        app:layout_constraintEnd_toStartOf="@+id/btnPow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/btnPow"
+        style="@style/CalculatorButton.Scientific"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="clickop"
+        android:text="^"
+        app:layout_constraintBottom_toTopOf="@+id/btn8"
+        app:layout_constraintEnd_toStartOf="@+id/btnSqrt"
+        app:layout_constraintStart_toEndOf="@+id/btnC"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/btnSqrt"
+        style="@style/CalculatorButton.Scientific"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="clickOpCientifica"
+        android:text="√"
+        app:layout_constraintBottom_toTopOf="@+id/btn9"
+        app:layout_constraintEnd_toStartOf="@+id/btnDiv"
+        app:layout_constraintStart_toEndOf="@+id/btnPow"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/btnDiv"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="clickop"
+        android:text="/"
+        app:layout_constraintBottom_toTopOf="@+id/btnMult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnSqrt"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+
+    <!-- Fila 2 -->
+    <Button
+        android:id="@+id/btn7"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="7"
+        app:layout_constraintBottom_toTopOf="@+id/btn4"
+        app:layout_constraintEnd_toStartOf="@+id/btn8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnC" />
+
+    <Button
+        android:id="@+id/btn8"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="8"
+        app:layout_constraintBottom_toTopOf="@+id/btn5"
+        app:layout_constraintEnd_toStartOf="@+id/btn9"
+        app:layout_constraintStart_toEndOf="@+id/btn7"
+        app:layout_constraintTop_toBottomOf="@+id/btnPow" />
+
+    <Button
+        android:id="@+id/btn9"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="9"
+        app:layout_constraintBottom_toTopOf="@+id/btn6"
+        app:layout_constraintEnd_toStartOf="@+id/btnMult"
+        app:layout_constraintStart_toEndOf="@+id/btn8"
+        app:layout_constraintTop_toBottomOf="@+id/btnSqrt" />
+
+    <Button
+        android:id="@+id/btnMult"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="clickop"
+        android:text="*"
+        app:layout_constraintBottom_toTopOf="@+id/btnResta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn9"
+        app:layout_constraintTop_toBottomOf="@+id/btnDiv" />
+
+
+    <!-- Fila 3 -->
+    <Button
+        android:id="@+id/btn4"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="4"
+        app:layout_constraintBottom_toTopOf="@+id/btn1"
+        app:layout_constraintEnd_toStartOf="@+id/btn5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn7" />
+
+    <Button
+        android:id="@+id/btn5"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="5"
+        app:layout_constraintBottom_toTopOf="@+id/btn2"
+        app:layout_constraintEnd_toStartOf="@+id/btn6"
+        app:layout_constraintStart_toEndOf="@+id/btn4"
+        app:layout_constraintTop_toBottomOf="@+id/btn8" />
+
+    <Button
+        android:id="@+id/btn6"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="6"
+        app:layout_constraintBottom_toTopOf="@+id/btn3"
+        app:layout_constraintEnd_toStartOf="@+id/btnResta"
+        app:layout_constraintStart_toEndOf="@+id/btn5"
+        app:layout_constraintTop_toBottomOf="@+id/btn9" />
+
+    <Button
+        android:id="@+id/btnResta"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="clickop"
+        android:text="-"
+        app:layout_constraintBottom_toTopOf="@+id/btnSuma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn6"
+        app:layout_constraintTop_toBottomOf="@+id/btnMult" />
+
+
+    <!-- Fila 4 -->
+    <Button
+        android:id="@+id/btn1"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@+id/btn0"
+        app:layout_constraintEnd_toStartOf="@+id/btn2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn4" />
+
+    <Button
+        android:id="@+id/btn2"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="2"
+        app:layout_constraintBottom_toTopOf="@+id/btn0"
+        app:layout_constraintEnd_toStartOf="@+id/btn3"
+        app:layout_constraintStart_toEndOf="@+id/btn1"
+        app:layout_constraintTop_toBottomOf="@+id/btn5" />
+
+    <Button
+        android:id="@+id/btn3"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="3"
+        app:layout_constraintBottom_toTopOf="@+id/btnPunto"
+        app:layout_constraintEnd_toStartOf="@+id/btnSuma"
+        app:layout_constraintStart_toEndOf="@+id/btn2"
+        app:layout_constraintTop_toBottomOf="@+id/btn6" />
+
+    <Button
+        android:id="@+id/btnSuma"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="clickop"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@+id/btnIgual"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn3"
+        app:layout_constraintTop_toBottomOf="@+id/btnResta" />
+
+
+    <!-- Fila 5 (Última Fila) - CORREGIDA -->
+    <Button
+        android:id="@+id/btn0"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPunto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn1" />
+
+    <Button
+        android:id="@+id/btnPunto"
+        style="@style/CalculatorButton.Numeric"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="pressdigit"
+        android:text="."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnIgual"
+        app:layout_constraintStart_toEndOf="@+id/btn0"
+        app:layout_constraintTop_toBottomOf="@+id/btn2" />
+
+    <Button
+        android:id="@+id/btnIgual"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="clicIgual"
+        android:text="="
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnPunto"
+        app:layout_constraintTop_toBottomOf="@+id/btnSuma" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

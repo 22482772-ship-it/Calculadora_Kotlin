@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta de Naranjas para la Calculadora -->
+    <color name="orange_dark">#FF8C00</color>   <!-- Naranja oscuro para operadores -->
+    <color name="orange_medium">#FFA500</color> <!-- Naranja medio para números -->
+    <color name="orange_light">#FFDAB9</color>  <!-- Naranja claro para funciones científicas -->
+    <color name="tomato_red">#FF6347</color>    <!-- Tono rojizo para el botón 'C' -->
+
+    <!-- Colores base -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
